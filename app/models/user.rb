@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
     c.login_field = :email
   end
 
-
+  has_one :twitter, :class_name=>"TwitterToken", :dependent=>:destroy
   has_many :petitions
   has_many :signatures
   has_many :petitions, :through => :signatures

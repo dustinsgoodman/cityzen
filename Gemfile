@@ -9,6 +9,7 @@ gem 'rails', '3.2.12'
 #user gems
 gem "authlogic", "~> 3.2.0"
 gem "oauth", "~> 0.4.7"
+gem "oauth-plugin", "~> 0.4.1"
 gem "authlogic-oauth", "~> 1.0.8"
 
 # Gems used only for assets and not required

@@ -60,6 +60,7 @@ module TeamPlebGovathon
     config.assets.version = '1.0'
 
     config.gem "oauth"
+    config.gem "oauth-plugin"
     config.gem "authlogic-oauth", :lib => "authlogic_oauth"
   end
 end
