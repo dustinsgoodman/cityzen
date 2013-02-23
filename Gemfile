@@ -7,6 +7,10 @@ gem 'rails', '3.2.12'
 
 gem 'mysql2', '~> 0.3.11'
 
+#user gems
+gem "authlogic", "~> 3.2.0"
+gem "oauth", "~> 0.4.7"
+gem "authlogic-oauth", "~> 1.0.8"
 
 # Gems used only for assets and not required
 # in production environments by default.

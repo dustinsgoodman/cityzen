@@ -29,6 +29,11 @@ GEM
       i18n (~> 0.6)
       multi_json (~> 1.0)
     arel (3.0.2)
+    authlogic (3.2.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+    authlogic-oauth (1.0.8)
+      activesupport
     builder (3.0.4)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
@@ -54,6 +59,7 @@ GEM
     mime-types (1.21)
     multi_json (1.6.1)
     mysql2 (0.3.11)
+    oauth (0.4.7)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -104,9 +110,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  authlogic (~> 3.2.0)
+  authlogic-oauth (~> 1.0.8)
   coffee-rails (~> 3.2.1)
   jquery-rails
   mysql2 (~> 0.3.11)
+  oauth (~> 0.4.7)
   rails (= 3.2.12)
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
