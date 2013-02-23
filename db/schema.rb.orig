@@ -11,17 +11,8 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130223031534) do
-
-  create_table "petitions", :force => true do |t|
-    t.string  "title"
-    t.integer "num_signatures", :default => 0
-    t.integer "author_id"
-    t.integer "num_goal",       :default => 0
-    t.float   "longitude"
-    t.float   "latitude"
-    t.text    "content"
-  end
+<<<<<<< HEAD
+ActiveRecord::Schema.define(:version => 20130223022611) do
 
   create_table "users", :force => true do |t|
     t.string   "first_name",                                            :null => false
@@ -67,4 +58,18 @@ ActiveRecord::Schema.define(:version => 20130223031534) do
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
   add_index "users", ["oauth_token"], :name => "index_users_on_oauth_token"
 
+=======
+ActiveRecord::Schema.define(:version => 20130223022223) do
+
+  create_table "petitions", :force => true do |t|
+    t.string  "title"
+    t.integer "num_signatures"
+    t.integer "author_id"
+    t.integer "num_goal"
+    t.float   "longitude"
+    t.float   "latitude"
+    t.text    "content"
+  end
+
+>>>>>>> 80487ea7250a4716373bb25492d241bd18fbe09e
 end
