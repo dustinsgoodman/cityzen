@@ -1,0 +1,1 @@
+exec('elasticsearch -f -D es.config=/usr/local/Cellar/elasticsearch/0.19.4/config/elasticsearch.yml')
