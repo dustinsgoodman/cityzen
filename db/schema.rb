@@ -11,13 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130223022223) do
+ActiveRecord::Schema.define(:version => 20130223031534) do
 
   create_table "petitions", :force => true do |t|
     t.string  "title"
-    t.integer "num_signatures"
+    t.integer "num_signatures", :default => 0
     t.integer "author_id"
-    t.integer "num_goal"
+    t.integer "num_goal",       :default => 0
     t.float   "longitude"
     t.float   "latitude"
     t.text    "content"
