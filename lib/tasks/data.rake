@@ -4,7 +4,7 @@ namespace :harvest do
 
     ####
 
-    doc = Nokogiri::HTML(open('/test.html'))
+    doc = Nokogiri::HTML(open('/User/peterpark/Documents/personal/hackathons/team-pleb-govathon/lib/tasks/test.html'))
 
     puts doc.class
 
