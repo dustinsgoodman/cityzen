@@ -1,3 +1,27 @@
 <h1>
   <%= @petition.title %>
 </h1>
+
+<p>
+  <%= @petition.user.first_name %>
+  <%= @petition.user.last_name %>
+</p>
+
+
+<h4>Description</h4>
+<p>
+  <%= @petition.content %>
+</p>
+
+<h1>
+  <%= @petition.signatures_left %> Signatures left
+</h1>
+
+<% @petition.users.each do |user| %>
+  <%= user.first_name %>
+<% end %>
+
+
+
+
+<%= link_to "sign", petition_sign_path(@petition) %>

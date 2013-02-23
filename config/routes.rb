@@ -1,16 +1,19 @@
 TeamPlebGovathon::Application.routes.draw do
-  
+
   root :to => 'pages#index'
 
   resources :pages
   resources :users
   resources :user_sessions
   resources :legislations
-  
+  resources :posts
   match "login", :to => 'user_sessions#new', :action => 'login'
   match "logout", :to => 'user_sessions#destroy', :action => 'logout'
 
-  resources :petitions
+  resources :petitions do
+    get :sign
+  end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

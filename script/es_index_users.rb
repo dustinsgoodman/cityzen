@@ -3,7 +3,7 @@ client = ElasticSearch.new(
     :index=> "users", 
     :type => "user"
 )
-client.delete_index("users")
+#client.delete_index("users")
 client.create_index("users")
 
 client.update_mapping({

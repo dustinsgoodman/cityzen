@@ -2,14 +2,18 @@ class Post < ActiveRecord::Base
 
   has_many :comments
   belongs_to :user
+  belongs_to :petition
+  belongs_to :legislation
 
-  attr_accessible :content, :title, :user_id, 
+  attr_accessible :content, :title, :user_id,
     :forum_id, :post_updated_at, :petition, :legislation
 
   validates_length_of :title, :minimum => 2
   validates_length_of :content, :minimum => 5
 
   before_save :test_whitespace
+
+
 
   def self.search(search)
     if search

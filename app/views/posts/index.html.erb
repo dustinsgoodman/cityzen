@@ -1,0 +1,9 @@
+<%= link_to "new post", new_post_path %>
+<table>
+<% @posts.each do |p| %>
+  <tr>
+    <td><%=link_to p.title, post_path(:id => p.id) %></td>
+    <td><%= p.user %></td>
+  </tr>
+<% end %>
+</table>

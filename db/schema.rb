@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130223083620) do
+ActiveRecord::Schema.define(:version => 20130223150152) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id"
@@ -21,6 +21,17 @@ ActiveRecord::Schema.define(:version => 20130223083620) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "consumer_tokens", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "type",       :limit => 30
+    t.string   "token",      :limit => 1024
+    t.string   "secret"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  add_index "consumer_tokens", ["token"], :name => "index_consumer_tokens_on_token", :unique => true, :length => {"token"=>100}
+
   create_table "legislations", :force => true do |t|
     t.string   "title"
     t.text     "content"
@@ -29,21 +40,23 @@ ActiveRecord::Schema.define(:version => 20130223083620) do
     t.string   "sponsor"
     t.string   "date"
     t.boolean  "status"
-    t.string   "affected_location"
     t.integer  "ordinance_id"
     t.integer  "legislation_type"
-    t.datetime "created_at",        :null => false
-    t.datetime "updated_at",        :null => false
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
+    t.integer  "district"
   end
 
   create_table "petitions", :force => true do |t|
-    t.string  "title"
-    t.integer "num_signatures", :default => 0
-    t.integer "author_id"
-    t.integer "num_goal",       :default => 0
-    t.float   "longitude"
-    t.float   "latitude"
-    t.text    "content"
+    t.string   "title"
+    t.integer  "num_signatures", :default => 0
+    t.integer  "user_id"
+    t.integer  "num_goal",       :default => 0
+    t.float    "longitude"
+    t.float    "latitude"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "posts", :force => true do |t|
@@ -54,6 +67,13 @@ ActiveRecord::Schema.define(:version => 20130223083620) do
     t.integer  "legistlation_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "signatures", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "petition_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "sub_comments", :force => true do |t|

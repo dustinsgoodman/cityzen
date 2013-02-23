@@ -3,9 +3,15 @@ class User < ActiveRecord::Base
     c.login_field = :email
   end
 
+
+  has_many :petitions
+  has_many :signatures
+  has_many :petitions, :through => :signatures
+
   has_many :posts
   has_many :comments
   has_many :sub_comments
+
 
   attr_accessible :login, :first_name, :middle_name, :last_name,
   :phone_number, :email, :password, :password_confirmation,
@@ -43,7 +49,7 @@ class User < ActiveRecord::Base
   end
 
   def name
-    [fname, lname].join(" ")
+    [first_name, last_name].join(" ")
   end
   
   private
