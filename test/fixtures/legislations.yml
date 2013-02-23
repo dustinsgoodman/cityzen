@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  content: MyText
+  num_for_votes: 
+  num_no_votes: 
+  sponsor: MyString
+  date: MyString
+  passed?: false
+  affected_location: MyString
+  ordinance_id: 
+  legislation_type: 
+
+two:
+  title: MyString
+  content: MyText
+  num_for_votes: 
+  num_no_votes: 
+  sponsor: MyString
+  date: MyString
+  passed?: false
+  affected_location: MyString
+  ordinance_id: 
+  legislation_type: 
