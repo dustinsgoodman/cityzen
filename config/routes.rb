@@ -6,6 +6,7 @@ TeamPlebGovathon::Application.routes.draw do
   resources :users
   resources :user_sessions
   resources :legislations
+  resources :posts
   
   match "login", :to => 'user_sessions#new', :action => 'login'
   match "logout", :to => 'user_sessions#destroy', :action => 'logout'
