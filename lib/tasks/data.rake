@@ -4,7 +4,7 @@ namespace :harvest do
 
     ####
 
-    doc = Nokogiri::HTML(open('~/team-pleb-govathon/lib/tasks/test.html'))
+    doc = Nokogiri::HTML(open("./lib/tasks/test.html"))
 
     puts doc.class
 
@@ -88,7 +88,7 @@ namespace :harvest do
     	puts "Title: #{@MEETING_TITLE}"
 
     	if @MEETING_ID.include? "O"
-     		Legislation.create(:title => @MEETING_TITLE, :date => @MEETING_DATE,:content => @MEETING_TEXT, :num_for_votes => @MEETING_YEA, :num_no_votes => @MEETING_NAY, :district => @DISTRICT, :ordinance_id => @MEETING_ID )
+     		Legislation.create(:title => @MEETING_TITLE, :date => @MEETING_DATE,:content => @MEETING_TEXT, :num_for_votes => @MEETING_YEA, :num_no_votes => @MEETING_NAY, :ordinance_id => @MEETING_ID )
 
      	else
 
