@@ -1,4 +1,9 @@
 TeamPlebGovathon::Application.routes.draw do
+  root :to => 'pages#index'
+
+  resources :pages
+  resources :petitions
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
