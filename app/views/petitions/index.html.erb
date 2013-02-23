@@ -1,1 +1,5 @@
 <%= link_to "new petition", new_petition_path %>
+
+<% @petitions.each do |petition| %>
+  <%= render :partial => 'list', :locals => {:petition => petition}%>
+<% end %>

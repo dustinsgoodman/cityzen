@@ -1,5 +1,6 @@
 class PetitionsController < ApplicationController
   def index
+    @petitions = Petition.all
   end
 
   def new
