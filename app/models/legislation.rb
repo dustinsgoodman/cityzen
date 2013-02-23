@@ -6,7 +6,7 @@ class Legislation < ActiveRecord::Base
   has_one :post
 
   def summary
-    [title, date, content, num_for_votes, num_no_votes, status, affected_location].join " "
+    [title, date, content, num_for_votes, num_no_votes, status, district].join " "
   end
 
   private

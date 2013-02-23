@@ -36,11 +36,6 @@
 </p>
 
 <p>
-  <b>Affected location:</b>
-  <%= @legislation.affected_location %>
-</p>
-
-<p>
   <b>Ordinance:</b>
   <%= @legislation.ordinance_id %>
 </p>
@@ -50,6 +45,10 @@
   <%= @legislation.legislation_type %>
 </p>
 
+<% @legislation.post.comments.each do |c| %>
+  <%= render :partial => "legislations/partials/forum_comment", :locals => { :c => c } %>
+   <br /><br />
+<% end %>
 
 <%= link_to 'Edit', edit_legislation_path(@legislation) %> |
 <%= link_to 'Back', legislations_path %>
