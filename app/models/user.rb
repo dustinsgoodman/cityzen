@@ -3,8 +3,10 @@ class User < ActiveRecord::Base
     c.login_field = :email
   end
 
-  attr_accessible :login, :first_name, :last_name, :phone_number,
-  :email, :password, :password_confirmation
+  attr_accessible :login, :first_name, :middle_name, :last_name, 
+  :phone_number, :email, :password, :password_confirmation, 
+  :address, :addres2, :city, :state, :zip, :longitude, :latitude,
+  :profile_pic, :facebook, :twitter
   
   validates_presence_of :first_name
   validates_presence_of :last_name
