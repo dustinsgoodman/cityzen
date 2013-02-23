@@ -12,7 +12,7 @@ class SiteSearch
       search_specs << q.text(:title, @query)
       search_specs << q.text(:content, @query)
       
-      q.bool(:should, *search_specs.flatten)=
+      q.bool(:should, *search_specs.flatten)
     }
   end
   
@@ -31,7 +31,7 @@ class SiteSearch
   end
   
   def search(search_params)
-    @query = params[:query]
+    @query = search_params[:query]
     search_query = EsSearch.new(
       :index => search_params[:index],
       :type => search_params[:type],

@@ -28,8 +28,8 @@ Petition.find_each() {|p|
     :user_id => p[:user_id].to_i,
     :num_goal => p[:num_goal].to_i,
     :geo => [p[:longitude], p[:latitude]],
-    :content => p[:content]
-    :created_at => l[:created_at],
-    :updated_at => l[:updated_at]
+    :content => p[:content],
+    :created_at => p[:created_at],
+    :updated_at => p[:updated_at]
   }, :id => p[:id])
 }

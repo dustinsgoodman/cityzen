@@ -14,9 +14,7 @@ TeamPlebGovathon::Application.routes.draw do
     get :sign
   end
 
-  resources :application do
-    get :search
-  end
+  post "/search" => "search#search"
 
 
   # The priority is based upon order of creation:

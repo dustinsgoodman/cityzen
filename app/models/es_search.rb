@@ -22,7 +22,7 @@ class EsSearch
     }
 
     client = ElasticSearch.new(
-      Settings.elasticsearch.address, 
+      '0.0.0.0:9200', 
       :index => @index, 
       :type => @type
     )

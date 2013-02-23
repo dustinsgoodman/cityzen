@@ -1,5 +1,13 @@
 <%= link_to "new petition", new_petition_path %>
 
+<div>
+  <h2>Petitions Search</h2>
+
+  <%= form_for :search, :url=> {:action =>"search", :controller => "search"}, :method => :POST do |f| %>
+    <%= f.text_field :query %>
+  <% end %>
+</div>
+
 <% @petitions.each do |petition| %>
   <%= render :partial => 'list', :locals => {:petition => petition}%>
 <% end %>
