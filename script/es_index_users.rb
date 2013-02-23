@@ -1,8 +1,9 @@
 client = ElasticSearch.new(
-    Settings.elasticsearch.address, 
+    '0.0.0.0:9200', 
     :index=> "users", 
     :type => "user"
 )
+client.delete_index("users")
 client.create_index("users")
 
 client.update_mapping({
@@ -30,11 +31,3 @@ User.find_each() { |u|
     :registered => u[:created_at]
   }, :id => u[:id])
 }
-
-elasticsearch:
-    binpath: /usr/local/bin
-    log_file: "/usr/local/var/log/elasticsearch/es_cityzen.log"
-    cluster_path: /usr/local/var/elasticsearch/es_cityzen/
-    port: 9200
-    listen: 9200
-    address: '0.0.0.0:9200'
