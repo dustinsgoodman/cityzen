@@ -11,6 +11,18 @@
     </div>
   <% end %>
 
+  <%= f.label :first_name %><%= f.text_field :first_name %><br />
+  <%= f.label :middle_name %><%= f.text_field :middle_name %><br />
+  <%= f.label :last_name %><%= f.text_field :last_name %><br />
+  <%= f.label :phone_number %><%= f.text_field :phone_number %><br />
+  <%= f.label :email %><%= f.text_field :email %><br />
+
+  <%= f.label :address %><%= f.text_field :address %><br />
+  <%= f.label :address2 %><%= f.text_field :address2 %><br />  
+  <%= f.label :city %><%= f.text_field :city %><br />
+  <%= f.label :state %><%= f.text_field :state %><br />
+  <%= f.label :zip %><%= f.text_field :zip %><br />
+
   <div class="actions">
     <%= f.submit %>
   </div>
