@@ -36,6 +36,9 @@ end
 gem 'jquery-rails'
 gem "rubberband", :git => "https://github.com/clickscape/rubberband.git", :branch => "remove-hits"
 
+gem 'nokogiri'
+
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

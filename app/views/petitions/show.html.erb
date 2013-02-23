@@ -30,3 +30,8 @@
 
 
 <%= link_to "sign", petition_sign_path(@petition) %>
+
+<% @petition.post.comments.each do |c| %>
+  <%= render :partial => "legislations/partials/forum_comment", :locals => { :c => c } %>
+   <br /><br />
+<% end %>
