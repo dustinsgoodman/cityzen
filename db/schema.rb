@@ -13,6 +13,14 @@
 
 ActiveRecord::Schema.define(:version => 20130223095332) do
 
+  create_table "comments", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "content"
+    t.integer  "post_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "legislations", :force => true do |t|
     t.string   "title"
     t.text     "content"
@@ -43,6 +51,23 @@ ActiveRecord::Schema.define(:version => 20130223095332) do
     t.integer  "petition_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.string   "content"
+    t.integer  "user_id"
+    t.integer  "petition_id"
+    t.integer  "legistlation_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "sub_comments", :force => true do |t|
+    t.integer  "comment_id"
+    t.integer  "user_id"
+    t.string   "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -84,6 +109,7 @@ ActiveRecord::Schema.define(:version => 20130223095332) do
     t.boolean  "event_coord",                        :default => false
     t.datetime "created_at",                                            :null => false
     t.datetime "updated_at",                                            :null => false
+    t.integer  "district"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
