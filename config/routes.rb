@@ -2,6 +2,7 @@ TeamPlebGovathon::Application.routes.draw do
   root :to => 'pages#index'
 
   resources :pages
+  resources :users
   resources :petitions
 
   # The priority is based upon order of creation:
