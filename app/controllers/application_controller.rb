@@ -22,7 +22,6 @@ class ApplicationController < ActionController::Base
 
   def require_user
     unless logged_in?
-      store_location
       flash[:notice] = "Please log in to continue"
       redirect_to login_path
       return false
@@ -31,7 +30,6 @@ class ApplicationController < ActionController::Base
 
   def require_no_user
     if logged_in?
-      redirect_to account_path
       return false
     end
   end

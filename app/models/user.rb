@@ -3,6 +3,10 @@ class User < ActiveRecord::Base
     c.login_field = :email
   end
 
+  has_many :petitions
+  has_many :signatures
+  has_many :petitions, :through => :signatures
+
   attr_accessible :login, :first_name, :middle_name, :last_name,
   :phone_number, :email, :password, :password_confirmation,
   :address, :address2, :city, :state, :zip, :longitude, :latitude,
