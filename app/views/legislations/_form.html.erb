@@ -1,0 +1,57 @@
+<%= form_for(@legislation) do |f| %>
+  <% if @legislation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@legislation.errors.count, "error") %> prohibited this legislation from being saved:</h2>
+
+      <ul>
+      <% @legislation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :num_for_votes %><br />
+    <%= f.text_field :num_for_votes %>
+  </div>
+  <div class="field">
+    <%= f.label :num_no_votes %><br />
+    <%= f.text_field :num_no_votes %>
+  </div>
+  <div class="field">
+    <%= f.label :sponsor %><br />
+    <%= f.text_field :sponsor %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.text_field :date %>
+  </div>
+  <div class="field">
+    <%= f.label :passed? %><br />
+    <%= f.check_box :passed? %>
+  </div>
+  <div class="field">
+    <%= f.label :affected_location %><br />
+    <%= f.text_field :affected_location %>
+  </div>
+  <div class="field">
+    <%= f.label :ordinance_id %><br />
+    <%= f.text_field :ordinance_id %>
+  </div>
+  <div class="field">
+    <%= f.label :legislation_type %><br />
+    <%= f.text_field :legislation_type %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

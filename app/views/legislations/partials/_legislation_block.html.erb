@@ -1,0 +1,5 @@
+<div>
+  <b><%= record.date %><b> <%= link_to "#{record.title}", legislation_path(record) %><br />
+  Sponsor: <%= record.sponsor %>
+  Status: <%= record.status ? "Passed" : "Rejected" %>
+<div>

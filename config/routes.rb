@@ -1,9 +1,12 @@
 TeamPlebGovathon::Application.routes.draw do
+  
   root :to => 'pages#index'
 
   resources :pages
   resources :users
   resources :user_sessions
+  resources :legislations
+  
   match "login", :to => 'user_sessions#new', :action => 'login'
   match "logout", :to => 'user_sessions#destroy', :action => 'logout'
 

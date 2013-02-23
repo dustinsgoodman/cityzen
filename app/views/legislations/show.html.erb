@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @legislation.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @legislation.content %>
+</p>
+
+<p>
+  <b>Num for votes:</b>
+  <%= @legislation.num_for_votes %>
+</p>
+
+<p>
+  <b>Num no votes:</b>
+  <%= @legislation.num_no_votes %>
+</p>
+
+<p>
+  <b>Sponsor:</b>
+  <%= @legislation.sponsor %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @legislation.date %>
+</p>
+
+<p>
+  <b>Passed?:</b>
+  <%= @legislation.status %>
+</p>
+
+<p>
+  <b>Affected location:</b>
+  <%= @legislation.affected_location %>
+</p>
+
+<p>
+  <b>Ordinance:</b>
+  <%= @legislation.ordinance_id %>
+</p>
+
+<p>
+  <b>Legislation type:</b>
+  <%= @legislation.legislation_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_legislation_path(@legislation) %> |
+<%= link_to 'Back', legislations_path %>

@@ -1,0 +1,12 @@
+<h1>Listing legislations</h1>
+
+
+
+<% @legislations.each do |legislation| %>
+  <%= render :partial => "legislations/partials/legislation_block", :locals => { :record => legislation } %>
+  <br /><br />
+<% end %>
+
+
+
+<%= link_to 'New Legislation', new_legislation_path %>
