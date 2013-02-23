@@ -24,11 +24,11 @@ group :assets do
 end
 
 group :development do
-  gem 'mysql2', '~> 0.3.11'
+
 end
 
 group :production do
-  gem 'pg'
+  gem 'mysql2', '~> 0.3.11'
 end
 
 gem 'jquery-rails'
