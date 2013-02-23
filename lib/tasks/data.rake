@@ -4,7 +4,7 @@ namespace :harvest do
 
     ####
 
-    doc = Nokogiri::HTML(open('/Users/brendan/team-pleb-govathon/lib/tasks/test.html'))
+    doc = Nokogiri::HTML(open('/test.html'))
 
     puts doc.class
 
@@ -34,18 +34,18 @@ namespace :harvest do
 
    	@YEA_LOCATION = @MEETING_TEXT.index(/YEA/,0)
    	@NAY_LOCATION = @MEETING_TEXT.index(/NAY/, 0)
-   	
+
    	if @YEA_LOCATION && @NAY_LOCATION
    	  @YEA_VOTE_BEGIN= @MEETING_TEXT.index(/\s/, @YEA_LOCATION - 4) + 1
      	@YEA_VOTE_END= @MEETING_TEXT.index(/\s/, @YEA_LOCATION - 2) - 1
      	@MEETING_YEA = @MEETING_TEXT[(@YEA_VOTE_BEGIN..@YEA_VOTE_END)]
 
 
-   	
+
      	@NAY_VOTE_BEGIN= @MEETING_TEXT.index(/\s/, (@NAY_LOCATION - 4)) + 1
      	@NAY_VOTE_END= @MEETING_TEXT.index(/\s/,(@NAY_LOCATION - 2)) - 1
     	@MEETING_NAY = @MEETING_TEXT[(@NAY_VOTE_BEGIN)..(@NAY_VOTE_END)]
- 
+
 
     if @MEETING_TEXT.include?("Carla")
     	@DISTRICT = 1
@@ -76,7 +76,7 @@ namespace :harvest do
     end
 
 
-     ###something### 
+     ###something###
 
 
     	puts "Date: #{@MEETING_DATE}"
