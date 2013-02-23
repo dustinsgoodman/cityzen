@@ -3,6 +3,10 @@ class User < ActiveRecord::Base
     c.login_field = :email
   end
 
+  has_many :posts
+  has_many :comments
+  has_many :sub_comments
+
   attr_accessible :login, :first_name, :middle_name, :last_name,
   :phone_number, :email, :password, :password_confirmation,
   :address, :address2, :city, :state, :zip, :longitude, :latitude,
