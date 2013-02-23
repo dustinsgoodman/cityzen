@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   helper :all
   helper_method :current_user, :current_user_session, :logged_in?, :admin?, :require_user, :keep_location
- 
+
   def current_user
     return @current_user if defined?(@current_user)
     @current_user = current_user_session && current_user_session.record
@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
     return @current_user_session if defined?(@current_user_session)
     @current_user_session = UserSession.find
   end
-  
+
   def require_user
     unless logged_in?
       store_location
@@ -28,7 +28,7 @@ class ApplicationController < ActionController::Base
       return false
     end
   end
-  
+
   def require_no_user
     if logged_in?
       redirect_to account_path
@@ -39,5 +39,10 @@ class ApplicationController < ActionController::Base
   def keep_location
     flash.keep(:return_to)
   end
-  
+
+  def redirect_to_referrer_or(default, *args)
+    redirect_to(session[:return_to] || default)
+    session[:return_to] = nil
+  end
+
 end
