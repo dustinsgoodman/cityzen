@@ -43,4 +43,36 @@ class ApplicationController < ActionController::Base
     session[:return_to] = nil
   end
 
+  def search(opts = {})
+    page = opts[:page] || 1
+    per_page = opts[:per_page] || 25
+    order = "_score:desc"
+
+    search_params = {
+      :query => params[:query],
+      :index => params[:index],
+      :type => params[:type],
+      :page => page,
+      :per_page => per_page,
+      :order => order,
+      :format => :active_record,
+      :model_scope => if params[:type] == "legislation"
+                        Legislation
+                      elsif params[:type] == "petition"
+                        Petition
+                      else
+                        Post
+                      end
+    }
+
+    res = SiteSearch.search(search_params)
+    @results = res[:records]
+
+    respond_to do |format|
+      format.html do
+        render :action => 'index', :status => return_code
+      end
+      format.xml  { render :xml => @results }
+    end
+  end
 end
