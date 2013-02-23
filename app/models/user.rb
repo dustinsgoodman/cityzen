@@ -42,6 +42,6 @@ class User < ActiveRecord::Base
   end
 
   def name
-    [fname, lname].join(" ")
+    [first_name, last_name].join(" ")
   end
 end
