@@ -10,7 +10,16 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended to check this file into your version control system.
-ActiveRecord::Schema.define(:version => 20130223040918) do
+
+ActiveRecord::Schema.define(:version => 20130223080150) do
+
+  create_table "comments", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "content"
+    t.integer  "post_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "legislations", :force => true do |t|
     t.string   "title"
@@ -35,6 +44,24 @@ ActiveRecord::Schema.define(:version => 20130223040918) do
     t.float   "longitude"
     t.float   "latitude"
     t.text    "content"
+  end
+
+  create_table "posts", :force => true do |t|
+    t.string   "title"
+    t.string   "content"
+    t.integer  "user_id"
+    t.integer  "petition_id"
+    t.integer  "legistlation_id"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "sub_comments", :force => true do |t|
+    t.integer  "comment_id"
+    t.integer  "user_id"
+    t.string   "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -81,5 +108,4 @@ ActiveRecord::Schema.define(:version => 20130223040918) do
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
   add_index "users", ["oauth_token"], :name => "index_users_on_oauth_token"
 
->>>>>>> develop
 end
