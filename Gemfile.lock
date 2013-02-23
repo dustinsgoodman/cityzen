@@ -72,6 +72,7 @@ GEM
     multipart-post (1.1.5)
     mysql2 (0.3.11)
     oauth (0.4.7)
+    pg (0.14.1)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -128,6 +129,7 @@ DEPENDENCIES
   jquery-rails
   mysql2 (~> 0.3.11)
   oauth (~> 0.4.7)
+  pg
   rails (= 3.2.12)
   rubberband!
   sass-rails (~> 3.2.3)
