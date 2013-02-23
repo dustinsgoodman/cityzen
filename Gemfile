@@ -11,6 +11,8 @@ gem "authlogic", "~> 3.2.0"
 gem "oauth", "~> 0.4.7"
 gem "authlogic-oauth", "~> 1.0.8"
 
+gem "andand", "~> 1.3.3"
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
