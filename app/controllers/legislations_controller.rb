@@ -42,7 +42,7 @@ class LegislationsController < ApplicationController
   # POST /legislations.json
   def create
     @legislation = Legislation.new(params[:legislation])
-    @legislation = Post.create(:title => params[:legislation][:title],
+    @legislation.post = Post.create(:title => params[:legislation][:title],
                                :content => @legislation.summary,
                                :user_id => current_user.id)
 

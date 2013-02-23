@@ -2,7 +2,7 @@
 
 
 
-<% @legislations.each do |legislation| %>
+<% @legislations.reverse_each do |legislation| %>
   <%= render :partial => "legislations/partials/legislation_block", :locals => { :record => legislation } %>
   <br /><br />
 <% end %>

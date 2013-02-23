@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
   validates_presence_of :first_name
   validates_presence_of :last_name
   validates_presence_of :email
+  before_save :set_district
 
   def self.find_by_login_or_email(login)
    find_by_login(login) || find_by_email(login)
@@ -49,5 +50,24 @@ class User < ActiveRecord::Base
 
   def name
     [first_name, last_name].join(" ")
+  end
+  
+  private
+    def set_district
+      self.district = case zip
+        when "30312", "30316", "30317"          then 1
+        when "30308"                            then 2
+        when "30363", "30309", "30332"          then 3
+        when "30334", "30303", "30313"          then 4
+        when "30316"                            then 5
+        when "30307", "30324", "30306", "30309" then 6
+        when "30319", "30326"                   then 7
+        when "30327", "30305", "30342", "30326" then 8
+        when "30318"                            then 9
+        when "30331"                            then 10
+        when "30311", "30310"                   then 11
+        when "30354", "30315"                   then 12
+        else 13
+      end
   end
 end

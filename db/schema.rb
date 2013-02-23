@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130223150152) do
+ActiveRecord::Schema.define(:version => 20130223165047) do
 
   create_table "comments", :force => true do |t|
     t.integer  "user_id"
@@ -20,17 +20,6 @@ ActiveRecord::Schema.define(:version => 20130223150152) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-  create_table "consumer_tokens", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "type",       :limit => 30
-    t.string   "token",      :limit => 1024
-    t.string   "secret"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
-  end
-
-  add_index "consumer_tokens", ["token"], :name => "index_consumer_tokens_on_token", :unique => true, :length => {"token"=>100}
 
   create_table "legislations", :force => true do |t|
     t.string   "title"
@@ -64,9 +53,9 @@ ActiveRecord::Schema.define(:version => 20130223150152) do
     t.string   "content"
     t.integer  "user_id"
     t.integer  "petition_id"
-    t.integer  "legistlation_id"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.integer  "legislation_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "signatures", :force => true do |t|
