@@ -14,6 +14,10 @@ TeamPlebGovathon::Application.routes.draw do
     get :sign
   end
 
+  resources :application do
+    get :search
+  end
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

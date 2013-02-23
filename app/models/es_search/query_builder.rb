@@ -18,7 +18,7 @@ class EsSearch::QueryBuilder
   end
 
   def bool(type, *filters)
-    {:bool => {type => filters}}
+    {:bool => {type => filters}, :minimum_number_should_match => 1}
   end
 
 end
