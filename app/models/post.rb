@@ -6,12 +6,14 @@ class Post < ActiveRecord::Base
   belongs_to :legislation
 
   attr_accessible :content, :title, :user_id,
-    :forum_id, :post_updated_at, :petition, :legislation
+    :forum_id, :updated_at, :petition, :legislation, :comments_attributes
 
   validates_length_of :title, :minimum => 2
   validates_length_of :content, :minimum => 5
 
   before_save :test_whitespace
+
+  accepts_nested_attributes_for :comments
 
 
 

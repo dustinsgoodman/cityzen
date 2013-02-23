@@ -3,7 +3,7 @@
 <% @posts.each do |p| %>
   <tr>
     <td><%=link_to p.title, post_path(:id => p.id) %></td>
-    <td><%= p.user %></td>
+    <td><%= p.user.name %></td>
   </tr>
 <% end %>
 </table>

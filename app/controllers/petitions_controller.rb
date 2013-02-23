@@ -14,6 +14,7 @@ class PetitionsController < ApplicationController
 
   def show
     @petition = Petition.find(params[:id])
+    @petition.post.comments.build
   end
 
   def create
@@ -31,11 +32,23 @@ class PetitionsController < ApplicationController
     end
   end
 
+  def update
+    @petition = Petition.find(params[:id])
+    @petition.update_attributes(params[:petition])
+    redirect_to petition_path(@petition)
+  end
+
   def sign
     @petition = Petition.find(params[:petition_id])
 
     @petition.users << current_user
 
     redirect_to petition_path(@petition)
+  end
+
+  def save_comment
+    @petition = Petition.find(params[:petition_id])
+
+    # @petition.post.comments << @comment
   end
 end

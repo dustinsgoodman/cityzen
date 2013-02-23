@@ -36,8 +36,9 @@ class PostsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @post.update_attributes(params[:post])
-        @post.update_attributes(:post_updated_at => Time.current)
+        @post.comments.build(params[:post][:comments_attributes])
+      if @post.update_attributes([:post])
+        @post.update_attributes(:updated_at => Time.current)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         format.json { head :no_content }
       else

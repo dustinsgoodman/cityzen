@@ -21,6 +21,11 @@
   <%= user.first_name %>
 <% end %>
 
+<% @petition.post.comments.each do |c| %>
+  <%= render :partial => "legislations/partials/forum_comment", :locals => { :c => c } %>
+   <br /><br />
+<% end %>
+
 
 
 
