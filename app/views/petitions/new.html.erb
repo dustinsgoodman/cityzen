@@ -1,0 +1,14 @@
+<h3>Create New Petition</h3>
+
+<%= form_for @petition do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :num_goal, :value => "Signature Goal" %>
+  <%= f.text_field :num_goal %>
+
+  <%= f.label :content %>
+  <%= f.text_area :content, :placeholder => "Description" %>
+
+  <%= f.submit %>
+<% end %>

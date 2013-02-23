@@ -5,8 +5,12 @@ gem 'rails', '3.2.12'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
+gem 'mysql2', '~> 0.3.11'
 
+#user gems
+gem "authlogic", "~> 3.2.0"
+gem "oauth", "~> 0.4.7"
+gem "authlogic-oauth", "~> 1.0.8"
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -21,6 +25,7 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem "rubberband", :git => "https://github.com/clickscape/rubberband.git", :branch => "remove-hits"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
