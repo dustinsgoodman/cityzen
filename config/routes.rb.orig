@@ -1,8 +1,13 @@
 TeamPlebGovathon::Application.routes.draw do
+<<<<<<< HEAD
+  resources :users
+
+=======
   root :to => 'pages#index'
 
   resources :pages
   resources :petitions
+>>>>>>> 80487ea7250a4716373bb25492d241bd18fbe09e
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
