@@ -46,12 +46,6 @@ ActiveRecord::Schema.define(:version => 20130223095332) do
     t.text    "content"
   end
 
-  create_table "signatures", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "petition_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.string   "content"
@@ -60,6 +54,13 @@ ActiveRecord::Schema.define(:version => 20130223095332) do
     t.integer  "legistlation_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "signatures", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "petition_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "sub_comments", :force => true do |t|

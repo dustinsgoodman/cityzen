@@ -25,6 +25,7 @@ class LegislationsController < ApplicationController
   # GET /legislations/new.json
   def new
     @legislation = Legislation.new
+    @legislation.post = Post.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,6 +42,10 @@ class LegislationsController < ApplicationController
   # POST /legislations.json
   def create
     @legislation = Legislation.new(params[:legislation])
+    @legislation = Post.create(:title => params[:legislation][:title],
+                               :content => @legislation.summary,
+                               :user_id => current_user.id)
+
 
     respond_to do |format|
       if @legislation.save

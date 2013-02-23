@@ -9,6 +9,7 @@ class PetitionsController < ApplicationController
 
   def new
     @petition = Petition.new
+    @petition.post = Post.new
   end
 
   def show
@@ -17,6 +18,10 @@ class PetitionsController < ApplicationController
 
   def create
     @petition = Petition.new params[:petition]
+    @petition.post = Post.new
+    @petition.post.title = params[:petition][:title]
+    @petition.post.content = params[:petition][:content]
+    @petition.post.user_id = current_user.id
 
     if @petition.save
       flash[:notice] = "Petition successfully created!"
