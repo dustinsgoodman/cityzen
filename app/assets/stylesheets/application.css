@@ -11,3 +11,38 @@
  *= require_self
  *= require_tree .
  */
+
+*, body, p, ol, ul, td {
+  font-family: arial, helvetica, sans-serif;
+ }
+
+.navbar-outter {
+  background: #000;
+}
+
+a.brand:hover {
+  background: #F4F4F4;
+}
+
+.navbar-inner {
+  margin: 0 60px;
+}
+
+a.navlink {
+  font-size: 16px;
+  color: #273040;
+}
+
+a.navlink-mobile {
+  font-size: 16px;
+  color: #F9AD0C;
+}
+
+.nav-collapse {
+  line-height: 80px;
+}
+
+.imageAndTagline {
+  text-align: center;
+  margin-bottom: 20px;
+}
